@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Kreator Video</title>
+    <style>
+        body {
+            background: url('https://assets.onecompiler.app/43b4sf4g7/43b4se98v/towels-1511875_1280.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="registerPage">
+        <h2>Pendaftaran Kreator TikTok</h2>
+        <form onsubmit="showPaymentPage(event)">
+            <input type="text" placeholder="Nama Lengkap" required>
+            <input type="text" placeholder="Nama Akun TikTok" required>
+            <input type="Alamat" placeholder="Alamat Lengkap" required>
+            <input type="number" placeholder="Nomor Telfon" required>
+            <button type="submit">Lanjutkan</button>
+        </form>
+    </div>
+    
+    <div class="container hidden" id="paymentPage">
+        <h2>Pembayaran Pajak</h2>
+        <p>Silakan lakukan pembayaran sebesar <strong>Rp.3000</strong> ke nomor rekening ewallet Dana berikut:</p>
+        <h3>AMI</h3>
+        <h3>085643858809</h3>
+        <p>Biyaya tersebut bukan berasal dari defloper melainkan Pembayaran pendaftaran website.</p>
+        <button onclick="showConfirmationPage()">Saya Sudah Bayar</button>
+    </div>
+    
+    <div class="container hidden" id="confirmationPage">
+        <h2>Menunggu Konfirmasi</h2>
+        <p>Pembayaran Anda sedang diproses. Setelah diverifikasi, Anda akan otomatis terdaftar sebagai kreator TikTok di sistem CV.HIJAU MAKMUR TEXTILE.</p>
+    </div>
+    
+    <script>
+        function showPaymentPage(event) {
+            event.preventDefault(); 
+            document.getElementById('registerPage').classList.add('hidden');
+            document.getElementById('paymentPage').classList.remove('hidden');
+        }
+        
+        function showConfirmationPage() {
+            document.getElementById('paymentPage').classList.add('hidden');
+            document.getElementById('confirmationPage').classList.remove('hidden');
+            setTimeout(() => {
+                alert("pendaftaran Anda sebagai kreator CV.HIJAU MAKMUR TEXTILE sedang di diproses");
+            }, 10000); // Simulasi verifikasi dalam 1 MENIT
+        }
+    </script>
+</body>
+</html>
+
+
+
+
